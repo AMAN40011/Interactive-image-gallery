@@ -1,36 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css" />
-  <title>Image Gallery</title>
-</head>
 <body>
-  <div  class="gallery-wrap" >
-    <img src="./back.png" alt="Back" id="backBtn" />
-    
+  <h1 class="title">Interactive Image Gallery</h1>
+
+  <div class="gallery-wrap">
+    <button id="backBtn" class="nav-btn">◀</button>
+
     <div class="gallery" id="gallery">
-      <div>
-        <span><img src="./image-1.png" alt="Image 1" /></span>
-        <span><img src="./image-2.png" alt="Image 2" /></span>
-        <span><img src="./image-3.png" alt="Image 3" /></span>
+      <div class="slide">
+        <img src="./image-1.png" alt="Image 1">
+        <img src="./image-2.png" alt="Image 2">
+        <img src="./image-3.png" alt="Image 3">
       </div>
-      <div>
-        <span><img src="./image-4.png" alt="Image 4" /></span>
-        <span><img src="./image-5.png" alt="Image 5" /></span>
-        <span><img src="./image-6.png" alt="Image 6" /></span>
+
+      <div class="slide">
+        <img src="./image-4.png" alt="Image 4">
+        <img src="./image-5.png" alt="Image 5">
+        <img src="./image-6.png" alt="Image 6">
       </div>
     </div>
-    
-   <img src="./next.png" alt="Next" id="nextBtn" />
+
+    <button id="nextBtn" class="nav-btn">▶</button>
   </div>
 
   <script src="script.js"></script>
 </body>
-</html>
-
-
-
-
-
