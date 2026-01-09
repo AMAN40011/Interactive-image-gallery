@@ -21,7 +21,6 @@ body {
 
 .gallery {
   width: 900px;
-   height: 320px;      
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -32,14 +31,13 @@ body {
 }
 
 .gallery div {
-  width: 100%;
+  min-width: 900px;  
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding: 10px;
-  flex: none;
+  flex-shrink: 0;
 }
-
 .gallery div img {
   width: 100%;
   filter: grayscale(100%);
@@ -58,4 +56,5 @@ body {
   cursor: pointer;
   margin: 20px;
 }
+
 
