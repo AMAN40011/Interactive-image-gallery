@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Image Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
   <h1 class="title">Interactive Image Gallery</h1>
 
@@ -21,5 +30,12 @@
     <button id="nextBtn" class="nav-btn">▶</button>
   </div>
 
+  <!-- ✅ Lightbox MUST be inside body -->
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Preview">
+  </div>
+
   <script src="script.js"></script>
 </body>
+</html>
