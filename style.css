@@ -77,9 +77,13 @@ body {
 /* Images */
 .slide img {
   width: 100%;
-  border-radius: 15px;
+  height: 260px;          /* KEY FIX */
+  object-fit: cover;     /* MAGIC */
+  border-radius: 16px;
+  background: #111;
   filter: grayscale(100%);
-  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
 .slide img:hover {
@@ -88,3 +92,4 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
+
