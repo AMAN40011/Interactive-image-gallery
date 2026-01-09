@@ -1,16 +1,26 @@
-let scrollContainer = document.getElementById("gallery");
-let backBtn = document.getElementById("backBtn");
-let nextBtn = document.getElementById("nextBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollContainer = document.getElementById("gallery");
+  const backBtn = document.getElementById("backBtn");
+  const nextBtn = document.getElementById("nextBtn");
 
-scrollContainer.addEventListener("wheel", (evt) => {
-  evt.preventDefault();
-  scrollContainer.scrollLeft += evt.deltaY;
-});
+  if (!scrollContainer || !backBtn || !nextBtn) {
+    console.error("Gallery or buttons not found in DOM");
+    return;
+  }
 
-nextBtn.addEventListener("click", () => {
-  scrollContainer.scrollLeft += 300;
-});
+  // Mouse wheel → horizontal scroll
+  scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+  }, { passive: false });
 
-backBtn.addEventListener("click", () => {
-  scrollContainer.scrollLeft -= 300;
+  // Next button
+  nextBtn.addEventListener("click", () => {
+    scrollContainer.scrollLeft += 300;
+  });
+
+  // Back button
+  backBtn.addEventListener("click", () => {
+    scrollContainer.scrollLeft -= 300;
+  });
 });
