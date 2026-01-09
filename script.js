@@ -8,19 +8,31 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Mouse wheel → horizontal scroll
-  scrollContainer.addEventListener("wheel", (evt) => {
-    evt.preventDefault();
-    scrollContainer.scrollLeft += evt.deltaY;
-  }, { passive: false });
+  const slideWidth = scrollContainer.clientWidth;
 
-  // Next button
+  // Mouse wheel → horizontal scroll
+  scrollContainer.addEventListener(
+    "wheel",
+    (evt) => {
+      evt.preventDefault();
+      scrollContainer.scrollLeft += evt.deltaY;
+    },
+    { passive: false }
+  );
+
+  // Next slide
   nextBtn.addEventListener("click", () => {
-    scrollContainer.scrollLeft += 300;
+    scrollContainer.scrollBy({
+      left: slideWidth,
+      behavior: "smooth",
+    });
   });
 
-  // Back button
+  // Previous slide
   backBtn.addEventListener("click", () => {
-    scrollContainer.scrollLeft -= 300;
+    scrollContainer.scrollBy({
+      left: -slideWidth,
+      behavior: "smooth",
+    });
   });
 });
