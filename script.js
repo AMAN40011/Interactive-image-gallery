@@ -1,26 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollContainer = document.getElementById("gallery");
-  const backBtn = document.getElementById("backBtn");
-  const nextBtn = document.getElementById("nextBtn");
+// Lightbox functionality
+const images = document.querySelectorAll(".slide img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
 
-  if (!scrollContainer || !backBtn || !nextBtn) {
-    console.error("Gallery or buttons not found in DOM");
-    return;
+// Open lightbox
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+  });
+});
+
+// Close lightbox (button)
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+// Close lightbox (background click)
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
   }
+});
 
-  // Mouse wheel → horizontal scroll
-  scrollContainer.addEventListener("wheel", (evt) => {
-    evt.preventDefault();
-    scrollContainer.scrollLeft += evt.deltaY;
-  }, { passive: false });
-
-  // Next button
-  nextBtn.addEventListener("click", () => {
-    scrollContainer.scrollLeft += 300;
-  });
-
-  // Back button
-  backBtn.addEventListener("click", () => {
-    scrollContainer.scrollLeft -= 300;
-  });
+// Close on ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    lightbox.style.display = "none";
+  }
 });
