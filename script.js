@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const slideWidth = scrollContainer.clientWidth;
+  
+function updateButtons() {
+    backBtn.disabled = scrollContainer.scrollLeft <= 0;
+    nextBtn.disabled =
+      scrollContainer.scrollLeft + slideWidth >= scrollContainer.scrollWidth;
+  }
 
   // Mouse wheel → horizontal scroll
   scrollContainer.addEventListener(
