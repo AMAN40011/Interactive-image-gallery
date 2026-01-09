@@ -21,6 +21,7 @@ body {
 
 .gallery {
   width: 900px;
+   height: 320px;      
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -57,3 +58,4 @@ body {
   cursor: pointer;
   margin: 20px;
 }
+
